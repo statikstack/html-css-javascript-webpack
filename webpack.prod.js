@@ -1,3 +1,4 @@
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
@@ -30,6 +31,11 @@ module.exports = merge(common, {
     }),
     new UglifyJsWebpackPlugin({
       sourceMap: true
+    }),
+    new ImageminWebpackPlugin({
+      pngquant: {
+        quality: '95-100'
+      }
     })
   ]
 });
