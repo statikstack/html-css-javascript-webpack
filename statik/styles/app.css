@@ -1,0 +1,198 @@
+:root {
+  --electromagnetic: #2f3640;
+  --hint-of-pensive: #dcdde1;
+  --lynx-white: #f5f6fa;
+  --pico-void: #192a56;
+  --rise-n-shine: #fbc531;
+  --text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v15-latin-regular.eot');
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('../fonts/open-sans-v15-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/open-sans-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/open-sans-v15-latin-regular.woff') format('woff'),
+    url('../fonts/open-sans-v15-latin-regular.ttf') format('truetype'),
+    url('../fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg');
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/open-sans-v15-latin-600.eot');
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url('../fonts/open-sans-v15-latin-600.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/open-sans-v15-latin-600.woff2') format('woff2'),
+    url('../fonts/open-sans-v15-latin-600.woff') format('woff'),
+    url('../fonts/open-sans-v15-latin-600.ttf') format('truetype'),
+    url('../fonts/open-sans-v15-latin-600.svg#OpenSans') format('svg');
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v15-latin-700.eot');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url('../fonts/open-sans-v15-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/open-sans-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/open-sans-v15-latin-700.woff') format('woff'),
+    url('../fonts/open-sans-v15-latin-700.ttf') format('truetype'),
+    url('../fonts/open-sans-v15-latin-700.svg#OpenSans') format('svg');
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/open-sans-v15-latin-800.eot');
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+    url('../fonts/open-sans-v15-latin-800.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/open-sans-v15-latin-800.woff2') format('woff2'),
+    url('../fonts/open-sans-v15-latin-800.woff') format('woff'),
+    url('../fonts/open-sans-v15-latin-800.ttf') format('truetype'),
+    url('../fonts/open-sans-v15-latin-800.svg#OpenSans') format('svg');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--lynx-white);
+  border-top: 4px solid var(--rise-n-shine);
+  color: var(--electromagnetic);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+p {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-color: var(--pico-void);
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.navbar__brand {
+  align-items: center;
+  color: var(--lynx-white);
+  display: flex;
+}
+
+.navbar__brand img {
+  margin-right: 1rem;
+}
+
+.navbar__brand span {
+  font-size: 1.5rem;
+}
+
+.navbar__social {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__social li {
+  margin-left: 1rem;
+}
+
+.navbar__social a {
+  display: block;
+}
+
+.navbar__social svg {
+  fill: var(--hint-of-pensive);
+  transition: fill 200ms;
+  width: 1.5rem;
+}
+
+.navbar__social a:hover svg {
+  fill: var(--lynx-white);
+}
+
+.hero {
+  padding: 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--lynx-white);
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+}
+
+.hero h2 {
+  color: var(--lynx-white);
+  font-size: 2rem;
+  padding: 1rem;
+  text-shadow: var(--text-shadow);
+}
+
+.main {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+}
