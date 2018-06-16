@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.join(__dirname, './build/public')
+    path: path.join(__dirname, '../build/public')
   },
   module: {
     rules: [
@@ -35,7 +35,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|jpg|png|svg)$/,
+        test: /\.(gif|jpg|png|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
