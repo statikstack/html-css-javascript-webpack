@@ -49,5 +49,11 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: true
+    }
+  },
   plugins: [new CleanWebpackPlugin([path.resolve('build', 'public')])]
 };
