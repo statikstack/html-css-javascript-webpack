@@ -3,11 +3,12 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './statik/scripts/app.js'
+    vendor: path.resolve('statik', 'scripts', 'vendor.js'),
+    app: path.resolve('statik', 'scripts', 'app.js')
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.join(__dirname, '../build/public')
+    path: path.resolve('build', 'public')
   },
   module: {
     rules: [
@@ -48,5 +49,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin(['./build/public'])]
+  plugins: [new CleanWebpackPlugin([path.resolve('build', 'public')])]
 };
