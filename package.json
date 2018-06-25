@@ -12,9 +12,9 @@
     "src"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --env.env=dev",
     "build": "webpack --env.env=prod",
-    "lint": "eslint statik/**/*.js"
+    "lint": "eslint statik/**/*.js",
+    "start": "webpack-dev-server --env.env=dev"
   },
   "repository": {
     "type": "git",
@@ -35,10 +35,14 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.6.1",
     "file-loader": "1.1.11",
-    "imagemin-webpack-plugin": "2.1.5",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "image-webpack-loader": "4.3.1",
     "mini-css-extract-plugin": "0.4.0",
+    "optimize-css-assets-webpack-plugin": "4.0.2",
     "postcss-loader": "2.1.5",
     "prettier": "1.13.6",
+    "style-loader": "0.21.0",
     "uglifyjs-webpack-plugin": "1.2.7",
     "webpack": "4.12.1",
     "webpack-cli": "3.0.8",

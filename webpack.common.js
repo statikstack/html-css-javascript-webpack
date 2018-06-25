@@ -1,14 +1,15 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: {
-    vendor: path.resolve('statik', 'scripts', 'vendor.js'),
-    app: path.resolve('statik', 'scripts', 'app.js')
+    app: './statik/scripts/app.js',
+    vendor: './statik/scripts/vendor.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve('build', 'public')
+    path: path.resolve('dist')
   },
   module: {
     rules: [
@@ -34,26 +35,13 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(gif|jpg|png|svg|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              useRelativePath: true
-            }
-          }
-        ]
       }
     ]
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: true
-    }
-  },
-  plugins: [new CleanWebpackPlugin([path.resolve('build', 'public')])]
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      template: './statik/index.html'
+    })
+  ]
 };
