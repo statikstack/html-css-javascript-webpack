@@ -8,7 +8,7 @@ module.exports = {
     vendor: './statik/scripts/vendor.js'
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
     path: path.resolve('dist')
   },
   module: {
