@@ -39,7 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], { root: path.resolve() }),
     new HtmlWebpackPlugin({
       template: './statik/index.html'
     })
