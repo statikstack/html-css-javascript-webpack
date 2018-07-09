@@ -8,11 +8,15 @@ module.exports = {
     vendor: './statik/scripts/vendor.js'
   },
   output: {
-    filename: '[name].[chunkhash].bundle.js',
+    filename: '[name].js',
     path: path.resolve('dist')
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -24,14 +28,25 @@ module.exports = {
         }
       },
       {
-        test: /\.(eot|svg|ttf|woff2?)$/,
-        exclude: /images/,
+        test: /\.(eot|ttf|woff2?)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
+              useRelativePath: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(gif|jpg|png|svg|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              useRelativePath: true
             }
           }
         ]

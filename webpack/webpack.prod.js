@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const merge = require('webpack-merge');
-const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -8,9 +7,12 @@ const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+module.exports = merge.smart(common, {
   mode: 'production',
   devtool: 'source-map',
+  output: {
+    filename: '[name].[chunkhash].js'
+  },
   module: {
     rules: [
       {
@@ -40,17 +42,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.(gif|jpg|png|svg|ico)$/,
-        include: path.resolve('statik', 'images'),
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              useRelativePath: true
-            }
-          },
-          'image-webpack-loader'
-        ]
+        use: 'image-webpack-loader'
       }
     ]
   },
@@ -75,8 +67,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].bundle.css',
-      chunkFilename: '[id].css'
+      filename: '[name].[chunkhash].css'
     }),
     new UglifyJsWebpackPlugin({
       sourceMap: true

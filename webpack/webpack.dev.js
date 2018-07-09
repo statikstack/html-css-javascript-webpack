@@ -3,23 +3,14 @@ const path = require('path');
 
 const common = require('./webpack.common');
 
-module.exports = merge(common, {
+module.exports = merge.smart(common, {
   mode: 'development',
   devtool: 'eval',
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: 'html-loader'
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(gif|jpg|png|svg|ico)$/,
-        include: path.resolve('statik', 'images'),
-        use: ['file-loader']
       }
     ]
   },
