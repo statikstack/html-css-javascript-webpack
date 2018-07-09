@@ -2,8 +2,8 @@
   "name": "html-css-javascript-webpack",
   "version": "1.0.0",
   "description": "todo",
-  "author": "Roberto Achar <robertoachar@gmail.com>",
-  "homepage": "https://github.com/robertoachar/html-css-javascript-webpack#readme",
+  "author": "Statik <statikstack@gmail.com>",
+  "homepage": "https://github.com/statikstack/html-css-javascript-webpack#readme",
   "keywords": [
     "node"
   ],
@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/robertoachar/html-css-javascript-webpack.git"
+    "url": "https://github.com/statikstack/html-css-javascript-webpack.git"
   },
   "bugs": {
-    "url": "https://github.com/robertoachar/html-css-javascript-webpack/issues"
+    "url": "https://github.com/statikstack/html-css-javascript-webpack/issues"
   },
   "dependencies": {
     "normalize.css": "8.0.0"
