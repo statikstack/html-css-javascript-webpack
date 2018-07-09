@@ -18,7 +18,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.(gif|jpg|png|svg|ico)$/,
-        include: path.resolve(__dirname, 'statik/images'),
+        include: path.resolve('statik', 'images'),
         use: ['file-loader']
       }
     ]

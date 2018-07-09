@@ -40,7 +40,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.(gif|jpg|png|svg|ico)$/,
-        include: path.resolve(__dirname, 'statik/images'),
+        include: path.resolve('statik', 'images'),
         use: [
           {
             loader: 'file-loader',
@@ -55,9 +55,17 @@ module.exports = merge(common, {
     ]
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
-      name: true
+      name: true,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
     },
     minimizer: [
       new OptimizeCSSAssetsPlugin({
@@ -73,6 +81,7 @@ module.exports = merge(common, {
     new UglifyJsWebpackPlugin({
       sourceMap: true
     }),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })

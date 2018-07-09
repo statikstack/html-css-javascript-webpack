@@ -12,9 +12,9 @@
     "src"
   ],
   "scripts": {
-    "build": "webpack --env.env=prod",
+    "build": "webpack --env.mode=prod",
     "lint": "eslint statik/**/*.js",
-    "start": "webpack-dev-server --env.env=dev"
+    "start": "webpack-dev-server --env.mode=dev"
   },
   "repository": {
     "type": "git",
