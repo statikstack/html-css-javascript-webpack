@@ -4,8 +4,8 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './statik/scripts/app.js',
-    vendor: './statik/scripts/vendor.js'
+    vendor: './statik/scripts/vendor.js',
+    app: './statik/scripts/app.js'
   },
   output: {
     filename: '[name].js',
