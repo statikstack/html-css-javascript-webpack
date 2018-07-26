@@ -19,7 +19,7 @@ body {
   color: var(--electromagnetic);
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 h1,
@@ -27,6 +27,7 @@ h2,
 p {
   font-weight: 400;
   margin: 0;
+  max-width: 80ch;
   padding: 0;
 }
 
